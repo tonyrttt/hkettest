@@ -4,7 +4,8 @@ import Column from './column.js';
 import SubColumn from './subColumn.js';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Csv from 'csvtojson';
-
+//
+//import data from '../data.json';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 //const csvFilePath='../data/data.csv';
@@ -24,9 +25,21 @@ export default class Main extends Component {
 
   componentDidMount() {
     /*
+    fetch('https://localhost:8081/getCsv')
+    .then(response => response.json())
+    .then(responseJson => {
+      console.log(responseJson);
+    })
+    .catch(error => {
+      console.error(error);
+    });
+    */
+    /*
     Csv().fromFile(csvFilePath).then((jsonObj) => {
       console.log(jsonObj);
     })*/
+
+
   this.interval = setInterval(() => this.setState({ dataId: (this.state.dataId + 1) % 5 }), 1000);
 }
 
